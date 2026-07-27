@@ -1,6 +1,11 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+
 export default function Hero() {
+  const router = useRouter();
   return (
-    <section className="bg-gradient-to-br from-blue-50 to-white">
+    <section className="bg-gradient-to-br from-blue-100 via-white to-indigo-100">
 
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 px-8 py-24 md:flex-row">
 
@@ -22,13 +27,23 @@ export default function Hero() {
 
           <div className="mt-8 flex gap-4">
 
-            <button className="rounded-xl bg-blue-600 px-8 py-3 font-semibold text-white hover:bg-blue-700">
-              Login
-            </button>
+            <button
+  onClick={() => router.push("/login")}
+  className="rounded-xl bg-blue-600 px-8 py-3 font-semibold text-white hover:bg-blue-700"
+>
+  Login
+</button>
 
-            <button className="rounded-xl border border-gray-300 px-8 py-3 font-semibold hover:bg-gray-100">
-              Learn More
-            </button>
+           <button
+  onClick={() => {
+    document.getElementById("features")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }}
+  className="rounded-xl border border-gray-300 px-8 py-3 font-semibold hover:bg-gray-100"
+>
+  Learn More
+</button>
 
           </div>
 
@@ -38,7 +53,7 @@ export default function Hero() {
         {/* Right Illustration Placeholder */}
         <div className="flex-1">
 
-          <div className="flex h-80 items-center justify-center rounded-3xl bg-blue-100">
+          <div className="flex h-80 items-center justify-center rounded-3xl bg-gradient-to-br from-blue-200 to-indigo-200 shadow-lg">
 
             <h2 className="text-2xl font-bold text-blue-600">
               Students Helping Students 🤝

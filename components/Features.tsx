@@ -18,7 +18,7 @@ export default function Features() {
   ];
 
   return (
-    <section className="px-8 py-20">
+    <section id="features" className="px-8 py-20">
 
       <div className="mx-auto max-w-7xl">
 

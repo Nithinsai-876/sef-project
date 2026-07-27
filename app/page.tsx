@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-gradient-to-br from-blue-100 via-white to-indigo-200">
 
       <Navbar />
 
