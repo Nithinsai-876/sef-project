@@ -74,7 +74,7 @@ export default function StudentsPage() {
           placeholder="Search by Name, Student ID or Email..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="mt-8 w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-blue-600"
+          className="mt-8 w-full rounded-xl border border-gray-300 px-4 py-3 text-gray-900 placeholder:text-gray-500 outline-none focus:border-blue-600"
         />
 
         <div className="mt-8 bg-white rounded-2xl shadow overflow-hidden">

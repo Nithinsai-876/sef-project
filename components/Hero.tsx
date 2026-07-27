@@ -40,7 +40,7 @@ export default function Hero() {
       behavior: "smooth",
     });
   }}
-  className="rounded-xl border border-gray-300 px-8 py-3 font-semibold hover:bg-gray-100"
+  className="rounded-xl bg-indigo-600 px-8 py-3 font-semibold text-white hover:bg-indigo-700"
 >
   Learn More
 </button>
@@ -53,7 +53,7 @@ export default function Hero() {
         {/* Right Illustration Placeholder */}
         <div className="flex-1">
 
-          <div className="flex h-80 items-center justify-center rounded-3xl bg-gradient-to-br from-blue-200 to-indigo-200 shadow-lg">
+          <div className="flex h-80 items-center justify-center rounded-3xl bg-gradient-to-br from-blue-200 to-indigo-200 shadow-lg shadow-lg">
 
             <h2 className="text-2xl font-bold text-blue-600">
               Students Helping Students 🤝
