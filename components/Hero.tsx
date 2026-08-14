@@ -1,9 +1,30 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import type { User } from "@supabase/supabase-js";
+import { supabase } from "../lib/supabase";
 
 export default function Hero() {
   const router = useRouter();
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    async function checkUser() {
+      const { data } = await supabase.auth.getUser();
+      setUser(data.user);
+    }
+
+    checkUser();
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
 
   return (
     <section className="bg-gradient-to-br from-blue-100 via-white to-indigo-100">
@@ -28,10 +49,10 @@ export default function Hero() {
 
           <div className="mt-8 flex gap-4">
             <button
-              onClick={() => router.push("/login")}
+              onClick={() => router.push(user ? "/dashboard" : "/login")}
               className="rounded-xl bg-blue-600 px-8 py-3 font-semibold text-white hover:bg-blue-700"
             >
-              Login
+              {user ? "Dashboard" : "Login"}
             </button>
 
             <button
