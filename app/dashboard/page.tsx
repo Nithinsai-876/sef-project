@@ -42,6 +42,7 @@ export default function Dashboard() {
 
           <button
             className="mt-6 bg-red-600/90 hover:bg-red-700 text-white px-6 py-3 rounded-xl font-semibold shadow-lg transition"
+            onClick={handleLogout}
           >
             Logout
           </button>

@@ -1,9 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-
 export default function Hero() {
-  const router = useRouter();
   return (
     <section className="bg-gradient-to-br from-blue-100 via-white to-indigo-100">
 
@@ -26,15 +23,7 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex gap-4">
-
             <button
-  onClick={() => router.push("/login")}
-  className="rounded-xl bg-blue-600 px-8 py-3 font-semibold text-white hover:bg-blue-700"
->
-  Login
-</button>
-
-           <button
   onClick={() => {
     document.getElementById("features")?.scrollIntoView({
       behavior: "smooth",
